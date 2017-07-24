@@ -22,10 +22,10 @@ RUN apt-get update && apt-get install -y \
 ENV PATH=pkg-config:$PATH
 
 #Install Bioconductor packages first
-RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite(pkgs=c("sva","Biobase","limma", "BiocGenerics","affxparser","affy", "affyPLM", "aroma.light", "gcrma", "oligo", "oligoClasses", "pdInfoBuilder", "preprocessCore", "AffymetrixDataTestFiles", "DNAcopy"))'
+RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite(pkgs=c("sva","Biobase","limma", "BiocGenerics","affxparser","affy", "affyPLM", "aroma.light", "gcrma", "oligo", "oligoClasses", "pdInfoBuilder", "preprocessCore", "AffymetrixDataTestFiles", "DNAcopy", "RBGL","graph"))'
 
 #Install packages from CRAN
 RUN Rscript -e 'install.packages(c("R.utils","aroma.affymetrix","data.table", "gtools", "Rcpp","RColorBrewer", "gplots","scatterplot3d"))'
 
 #Vennerable has to be installed from a website repo
-RUN Rscript -e 'install.packages("Vennerable", repos="http://R-Forge.R-project.org")'
+RUN Rscript -e 'install.packages("devtools");library(devtools);install_github("js229/Vennerable")'
