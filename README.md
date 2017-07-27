@@ -1,2 +1,8 @@
 # AffyFunctionsv2
-Alternative version to download all required packages in order to make Affy microarray normalization
+
+- Dockerfile with all the necessary packages in order to make an affy normalization
+
+- r-base:3.3.1
+
+- Vennerable package included
+
