@@ -10,7 +10,7 @@
 #################################################################
 
 #R image to be the base in order to build our new image
-FROM r-base:3.4.0
+FROM r-base:3.3.1
 
 #Install Ubuntu extensions in order to run r
 RUN apt-get update && apt-get install -y \
