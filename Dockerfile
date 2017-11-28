@@ -24,6 +24,3 @@ RUN Rscript -e 'install.packages(c("R.utils","aroma.affymetrix","data.table", "g
 
 #Vennerable has to be installed from a website repo
 RUN Rscript -e 'install.packages("devtools");library(devtools);install_github("js229/Vennerable")'
-
-#Set the default Working Directory
-WORKDIR /
