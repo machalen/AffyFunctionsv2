@@ -1,12 +1,7 @@
 #################################################################
 # Dockerfile
-#
-# Version:          1
-# Software:         R
-# Description:      R and necessary packages for the analysis of Affymetrix microarrays
-# Website:          
-# Tags:             None, for the moment
-# Base Image:       R
+# Description:      R and necessary packages for the analysis of Affymetrix microarrays   
+# Base Image:       r-base:3.3.1
 #################################################################
 
 #R image to be the base in order to build our new image
@@ -29,3 +24,6 @@ RUN Rscript -e 'install.packages(c("R.utils","aroma.affymetrix","data.table", "g
 
 #Vennerable has to be installed from a website repo
 RUN Rscript -e 'install.packages("devtools");library(devtools);install_github("js229/Vennerable")'
+
+#Set the default Working Directory
+WORKDIR /
